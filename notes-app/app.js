@@ -1,8 +1,4 @@
-var add = require('./utils.js');
+var validator = require('validator');
 var getNotes = require('./notes.js');
 
-var sum = add(5, 5);
-var result = getNotes();
-
-console.log(sum);
-console.log(result);
+console.log(validator.isEmail("michael.kashkov@gmail.com"));
