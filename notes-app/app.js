@@ -1,4 +1,5 @@
 var validator = require('validator');
-var getNotes = require('./notes.js');
+var chalk = require('chalk');
+console.log(chalk.green.bold('Success!'));
 
 console.log(validator.isEmail("michael.kashkov@gmail.com"));
