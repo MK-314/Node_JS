@@ -24,6 +24,19 @@ var addNote = function(title, body) {
     }
 
 };
+var removeNote = function(title) {
+    var notes = loadNotes();
+    var index = -1;
+    notes.forEach(element => {
+        if (element.title == title) {
+            index = notes.indexOf(element);
+        }
+    });
+    if (index > -1) {
+        notes.splice(index, 1);
+        saveNotes(notes);
+    }
+}
 
 var saveNotes = function(notes) {
     fs.writeFileSync('notes.json', JSON.stringify(notes));
@@ -42,5 +55,6 @@ var loadNotes = function() {
 
 module.exports = {
     getNotes: getNotes,
-    addNote: addNote
+    addNote: addNote,
+    removeNote: removeNote
 };
