@@ -26,16 +26,20 @@ var addNote = function(title, body) {
 };
 var removeNote = function(title) {
     var notes = loadNotes();
-    var index = -1;
-    notes.forEach(element => {
-        if (element.title == title) {
-            index = notes.indexOf(element);
-        }
+    // var index = -1;
+    // notes.forEach(element => {
+    //     if (element.title == title) {
+    //         index = notes.indexOf(element);
+    //     }
+    // });
+    // if (index > -1) {
+    //     notes.splice(index, 1);
+    //     saveNotes(notes);
+    // }
+    var notesToKeep = notes.filter(function(note) {
+        return note.title !== title;
     });
-    if (index > -1) {
-        notes.splice(index, 1);
-        saveNotes(notes);
-    }
+    saveNotes(notesToKeep);
 }
 
 var saveNotes = function(notes) {
