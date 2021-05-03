@@ -52,9 +52,9 @@ var saveNotes = function(notes) {
 
 var loadNotes = function() {
     try {
-        var dataBuffer = fs.readFileSync('notes.json');
-        var dataJSON = dataBuffer.toString();
-        var dataObject = JSON.parse(dataJSON);
+        var dataBuffer = fs.readFileSync('notes.json'); // pure data
+        var dataJSON = dataBuffer.toString(); // to JSON
+        var dataObject = JSON.parse(dataJSON); // to Object
         return dataObject;
     } catch (e) {
         return [];
