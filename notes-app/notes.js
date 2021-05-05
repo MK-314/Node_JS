@@ -56,6 +56,7 @@ var removeNote = (title) => {
 var read = (title) => {
     var notes = loadNotes();
     var result = notes.find(note => note.title === title)
+        // debugger
     if (result) {
         log("Title: " + result.title);
         log("Text of the note: " + result.body);
