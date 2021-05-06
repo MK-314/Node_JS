@@ -12,7 +12,7 @@ request({ url: url, json: true }, (error, response) => {
 });
 
 request({ url: GeolocationCoords, json: true }, (error, response) => {
-    var latitude = response.body.features[0].center[0];
-    var longitude = response.body.features[0].center[1];
+    var latitude = response.body.features[0].center[1];
+    var longitude = response.body.features[0].center[0];
     log(latitude + " and " + longitude)
 })
