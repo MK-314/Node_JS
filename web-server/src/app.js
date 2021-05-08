@@ -18,6 +18,17 @@ hbs.registerPartials(partialsPath);
 // Setup static directoty to serve:
 app.use(express.static(publicDirPath));
 
+app.get('/weather', (req, res) => {
+    if (!req.query.address) {
+        return res.send({
+            error: "You need to provide and address"
+        })
+    }
+    res.send({
+        forecast: "It is snowing",
+        location: req.query.address
+    })
+})
 
 
 app.get('', (req, res) => {
@@ -32,6 +43,11 @@ app.get('/about', (req, res) => {
         name: "Mike"
     });
 })
+
+
+
+
+
 app.get('*', (req, res) => {
     res.render('404', {
         title: "Page not found",
