@@ -13,3 +13,7 @@ h1 {
 .cen {
     text-align: center;
 }
+
+.xright {
+    text-align: end;
+}
